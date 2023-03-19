@@ -9,6 +9,14 @@ const kafka = new Kafka({
     brokers: ['kafka:9092'],
   });
 
+const producer = kafka.producer();
+
+app.use((req, res, next) => {
+    req.producer = producer;
+
+    return next();
+});
+
 app.use(routes);
 
 async function run(){
@@ -18,5 +26,3 @@ async function run(){
 }
 
 run().catch(console.error);
-
-const producer = kafka.producer();
