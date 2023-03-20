@@ -1,3 +1,3 @@
 # microservice-node-kafka
 
-Microservices in Node.js and Kafka.
+Microservices using Node.js and Kafka.
