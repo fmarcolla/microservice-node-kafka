@@ -14,8 +14,8 @@ async function run(){
 
     await consumer.run({
         eachMessage: async ({ topic, partition, message }) => {
-            const prefix = `${topic} ${partition} ${message.offset}`;
-          console.log(`${prefix} ${messagem.key}#${messagem.value}`)
+            const prefix = `Topic: ${topic}, Partition: ${partition}`;
+          console.log(`${prefix} Message: ${message.key}#${message.value}`)
         },
     })
 }
